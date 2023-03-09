@@ -1,0 +1,52 @@
+<h1>Student Information</h1>
+<table>
+    <tr>
+        <td>Name</td>
+        <td>:</td>
+        <td><input type="text" [(ngModel)]="StudentName"/></td>
+    </tr>
+     <tr>
+        <td>ID</td>
+        <td>:</td>
+        <td><input type="number" [(ngModel)]="StudentId"/></td>
+    </tr>
+    <!--<tr>
+        <td>Class</td>
+        <td>:</td>
+        <td><input type="text" [(ngModel)]="StudentName"/></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>:</td>
+        <td><input type="text" [(ngModel)]="StudentName"/></td>
+    </tr>-->
+    <tr>
+        <td>
+            <input type="button" value="Add Student"  
+                (click)="AddStudent()"/>
+        </td>
+        <td>
+            <input type="button" value="Update Student"  
+                (click)="updateStudent()"/>
+        </td>
+    </tr> 
+    
+</table>
+<table border="1">
+    <td>Name:</td>
+    <td>ID:</td>
+    <td>Edit</td>
+    <td>Delete</td>
+    <tr *ngFor="let stu of StudentArray; let i =index">
+        
+        <td>
+            {{stu.name}}
+        </td>
+        <td>
+            {{stu.id}}
+        </td>
+        <td><input type="button" (click)="selectStudent(i)" value="Eidt"/></td>
+        <td><input type="button" (click)="deleteStudent(i)" value="Delete"/></td>
+    </tr>
+    
+</table>
